@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Генератор аффирмаций на каждый день — вдохновляющие фразы для хорошего настроения">
+  <title>Генератор аффирмаций на каждый день</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <main class="app" id="affirmation-app">
+    <header class="app-header">
+      <div class="logo" aria-hidden="true">✦</div>
+      <h1 class="app-title">Генератор аффирмаций</h1>
+      <p class="app-subtitle">Вдохновляющая фраза на каждый день — выберите категорию и нажмите кнопку</p>
+    </header>
+
+    <section class="categories" aria-label="Категории аффирмаций">
+      <h2 class="section-label">Категория</h2>
+      <div class="category-grid" id="category-grid" role="tablist"></div>
+    </section>
+
+    <section class="result-section" aria-live="polite" aria-atomic="true">
+      <div class="result-card" id="result-card">
+        <div class="result-placeholder" id="result-placeholder">
+          <span class="placeholder-icon" aria-hidden="true">✦</span>
+          <p>Нажмите кнопку ниже, чтобы получить свою аффирмацию</p>
+        </div>
+        <div class="result-content hidden" id="result-content">
+          <span class="result-category" id="result-category"></span>
+          <blockquote class="result-text" id="result-text"></blockquote>
+          <p class="result-hint" id="result-hint"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button type="button" class="btn btn-primary" id="btn-generate">
+        <span class="btn-icon" aria-hidden="true">✨</span>
+        Получить аффирмацию
+      </button>
+      <button type="button" class="btn btn-secondary hidden" id="btn-regenerate" disabled>
+        <span class="btn-icon" aria-hidden="true">↻</span>
+        Ещё одну
+      </button>
+      <button type="button" class="btn btn-ghost hidden" id="btn-copy" disabled>
+        <span class="btn-icon" aria-hidden="true">⎘</span>
+        <span id="copy-label">Скопировать</span>
+      </button>
+    </div>
+
+    <footer class="app-footer">
+      <p>Мини-продукт для встраивания на сайт · <a href="#" id="embed-hint">Как встроить</a></p>
+    </footer>
+  </main>
+
+  <dialog class="embed-dialog" id="embed-dialog">
+    <form method="dialog">
+      <h3>Встраивание на сайт</h3>
+      <p>Скопируйте код и вставьте на страницу:</p>
+      <pre class="embed-code" id="embed-code"></pre>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-secondary" id="btn-copy-embed">Скопировать код</button>
+        <button type="submit" class="btn btn-primary">Закрыть</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/affirmations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
